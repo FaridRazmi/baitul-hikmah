@@ -1,0 +1,39 @@
+:root {
+  --primary: #e6dcd0;
+  --tulisan: #501926;
+}
+
+* {
+  font-family: poppins;
+}
+
+body {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+}
+/* navbar start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+h2 {
+  margin: 0;
+  font-family: poppins;
+  color: var(--tulisan);
+}
+
+.navbar a {
+  color: var(--tulisan);
+  text-decoration: none;
+}
+
+.navbar .search {
+  margin: 20px;
+}
+hr {
+  border: 1px solid #501926;
+  margin-top: 0%;
+}
