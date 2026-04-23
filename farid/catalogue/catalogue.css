@@ -1,6 +1,6 @@
 :root {
-  --primary: #e6dcd0;
-  --tulisan: #501926;
+  --primary: #501926;
+  --side: #e6dcd0;
 }
 
 * {
@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--primary);
+  background-color: var(--side);
   margin: 0;
   padding: 0;
 }
@@ -16,24 +16,85 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  padding: 14px 28px;
+  background-color: #501926;
 }
 
-h2 {
+.navbar h2 {
   margin: 0;
-  font-family: poppins;
-  color: var(--tulisan);
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--side);
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
 .navbar a {
-  color: var(--tulisan);
+  color: var(--side);
   text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--side);
+  transition: width 0.25s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  opacity: 0.75;
 }
 
 .navbar .search {
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--side);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
+
+.navbar .search:hover {
+  background-color: var(--side);
+  color: var(--primary);
+}
+
+.navbar .search:hover svg {
+  stroke: var(--primary);
+}
+
+.navbar .search::after {
+  display: none;
+}
+
 hr {
-  border: 1px solid #501926;
-  margin-top: 0%;
+  border: none;
+  border-top: 1.5px solid var(--side);
+  margin: 0;
+  opacity: 0.3;
 }
+/* navbar end */
