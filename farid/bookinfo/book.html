@@ -21,10 +21,21 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
       </div>
-      <a class="search">
-        search
-        <i data-feather="search" style="width: 15px; height: auto"></i>
-      </a>
+      <div class="nav-right">
+        <select class="filter" onchange="alert('Filtering by: ' + this.value)">
+          <option value="all">All Categories</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Technology">Technology</option>
+        </select>
+        <form class="search" onsubmit="event.preventDefault(); if(this.q.value) alert('Searching for: ' + this.q.value);">
+          <input type="text" name="q" placeholder="search" autocomplete="off" />
+          <button type="submit">
+            <i data-feather="search" style="width: 15px; height: auto"></i>
+          </button>
+        </form>
+      </div>
     </div>
     <hr />
     <!-- navabar end -->
