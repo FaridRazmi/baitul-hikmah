@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="catalogue.css" />
+    <link rel="stylesheet" href="book.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@
           <a href="#about">About</a>
         </div>
         <div class="nav-right">
-          <select id="categoryFilter" class="filter">
+          <select class="filter" onchange="alert('Filtering by: ' + this.value)">
             <option value="all">All Categories</option>
             <option value="Science Fiction">Science Fiction</option>
             <option value="Fantasy">Fantasy</option>
@@ -40,14 +40,17 @@
           </select>
           <form
             class="search"
-            onsubmit="event.preventDefault();"
+            onsubmit="
+              event.preventDefault();
+              if (this.q.value) alert('Searching for: ' + this.q.value);
+            "
           >
-            <input type="text" id="searchInput" name="q" placeholder="search" autocomplete="off" />
+            <input type="text" name="q" placeholder="search" autocomplete="off" />
             <button type="submit">
               <i data-feather="search" style="width: 15px; height: auto"></i>
             </button>
           </form>
-          <a href="bag.html" class="bag-icon-link" style="color: var(--side); margin-left: 10px;">
+          <a href="bag.html" class="bag-icon-link" style="color: var(--tulisan); margin-left: 10px;">
              <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
           </a>
         </div>
@@ -56,10 +59,11 @@
     <hr />
     <!-- navabar end -->
     <!-- hero start -->
-    <div id="bookContainer"></div>
+
+    <div id="bookDetail"></div>
     <!-- hero end -->
   </body>
-  <script src="catalogue.js"></script>
+  <script src="book.js"></script>
   <script>
     feather.replace();
   </script>
