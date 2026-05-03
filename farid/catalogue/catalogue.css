@@ -19,6 +19,27 @@ body {
   align-items: center;
   padding: 14px 28px;
   background-color: #501926;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--side);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-left: 28px;
 }
 
 .navbar h2 {
@@ -157,3 +178,80 @@ hr {
   opacity: 0.3;
 }
 /* navbar end */
+
+/* hero start */
+
+#bookContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--side);
+}
+
+@media (max-width: 768px) {
+  .nav-brand {
+    width: 100%;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-top: 15px;
+    gap: 15px;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+  #bookContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+  }
+}
+
+.book-card {
+  background: var(--primary);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: 3px solid var(--side);
+}
+
+.book-card button {
+  background-color: var(--side);
+  margin: 10px auto;
+  margin-bottom: 0px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+/* hero end */
