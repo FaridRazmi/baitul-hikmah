@@ -16,6 +16,8 @@ function displayBookDetails(book) {
     stars += "⭐";
   }
 
+  // masuk
+
   container.innerHTML = `
         <div class="detail-container">
           <div class="detail-top">
@@ -41,13 +43,13 @@ function displayBookDetails(book) {
     `;
 }
 
-window.addToBag = function(bookId) {
-  let bag = JSON.parse(localStorage.getItem('bag')) || [];
+window.addToBag = function (bookId) {
+  let bag = JSON.parse(localStorage.getItem("bag")) || [];
   if (!bag.includes(bookId)) {
     bag.push(bookId);
-    localStorage.setItem('bag', JSON.stringify(bag));
-    alert('Book added to bag!');
+    localStorage.setItem("bag", JSON.stringify(bag));
+    alert("Book added to bag!");
   } else {
-    alert('Book is already in the bag!');
+    alert("Book is already in the bag!");
   }
-}
+};

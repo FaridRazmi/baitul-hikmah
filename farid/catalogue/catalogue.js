@@ -4,7 +4,19 @@ fetch("../data/books.json")
   .then((response) => response.json())
   .then((data) => {
     allBooks = data;
-    displayBooks(allBooks);
+    // Apply any URL query params (e.g. ?search=... or ?category=...)
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("search")) {
+      document.getElementById("searchInput").value = params.get("search");
+    }
+    if (params.get("category")) {
+      const cat = params.get("category");
+      const select = document.getElementById("categoryFilter");
+      for (let opt of select.options) {
+        if (opt.value === cat) { opt.selected = true; break; }
+      }
+    }
+    applyFilters();
   });
 
 function goToDetails(bookId) {

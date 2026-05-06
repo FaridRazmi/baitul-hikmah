@@ -1,0 +1,10 @@
+/* ── About Us Page ── */
+.page-content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 24px;
+  color: var(--primary);
+}
+
+.page-content h1 { font-size: 2rem; margin-bottom: 10px; }
+.page-content p  { font-size: 1rem; line-height: 1.7; color: #4a2030; }

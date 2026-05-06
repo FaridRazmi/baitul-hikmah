@@ -177,6 +177,8 @@ hr {
   margin: 0;
   opacity: 0.3;
 }
+/* Bag icon — no underline animation */
+.navbar a.bag-icon-link::after { display: none; }
 /* navbar end */
 
 /* hero start */
@@ -254,4 +256,10 @@ hr {
   border-radius: 10px;
 }
 
+/* Bag page */
+.bag-header { text-align: center; color: var(--primary); margin-top: 30px; }
+
+.empty-bag { text-align: center; color: var(--primary); margin-top: 50px; font-size: 1.2rem; }
+
+.checkout-container { text-align: center; margin-top: 30px; margin-bottom: 30px; }
 /* hero end */

@@ -177,6 +177,8 @@ hr {
   margin: 0;
   opacity: 0.3;
 }
+/* Bag icon — no underline animation */
+.navbar a.bag-icon-link::after { display: none; }
 /* navbar end */
 
 /* hero start */
