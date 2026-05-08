@@ -1,10 +1,12 @@
+/* ── Design tokens (match navbar.css) ── */
 :root {
   --primary: #501926;
   --side: #e6dcd0;
 }
 
 * {
-  font-family: poppins;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,8 +15,106 @@ body {
   padding: 0;
 }
 
+/* ═══════════════════════════════
+   Mobile toolbar (beside hamburger)
+   — hidden on desktop, shown on ≤768px
+   ═══════════════════════════════ */
+.mobile-toolbar {
+  display: none; /* desktop: hidden */
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end;
+}
 
-/* hero start */
+.mobile-toolbar .filter {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--side);
+  border-radius: 6px;
+  padding: 5px 6px;
+  font-size: 0.75rem;
+  max-width: 80px;
+  cursor: pointer;
+}
+
+.mobile-toolbar .search {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 1;
+  max-width: 140px;
+}
+
+.mobile-toolbar .search input {
+  border: none;
+  background: transparent;
+  color: var(--side);
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  width: 100%;
+  outline: none;
+}
+
+.mobile-toolbar .search input::placeholder { color: rgba(230,220,208,0.6); }
+
+.mobile-toolbar .search button {
+  background: transparent;
+  border: none;
+  color: var(--side);
+  padding: 5px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* ── nav-brand must be full-width on mobile ── */
+@media (max-width: 768px) {
+  .nav-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-toolbar { display: flex; }
+
+  /* Hide the desktop search/filter/bag from the sidebar on mobile */
+  .nav-menu .nav-right .filter,
+  .nav-menu .nav-right .search {
+    display: none;
+  }
+
+  /* Keep the bag icon visible in the sidebar */
+  .nav-menu .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* ═══════════════════════════════
+   Catalogue toolbar (results count)
+   ═══════════════════════════════ */
+.catalogue-toolbar {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.results-count {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  opacity: 0.75;
+  letter-spacing: 0.3px;
+}
+
+/* ── Book grid ── */
 
 #bookContainer {
   display: grid;
@@ -110,4 +210,50 @@ body {
 .empty-bag { text-align: center; color: var(--primary); margin-top: 50px; font-size: 1.2rem; }
 
 .checkout-container { text-align: center; margin-top: 30px; margin-bottom: 30px; }
-/* hero end */
+
+/* ═══════════════════════════════
+   Pagination
+   ═══════════════════════════════ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 32px 20px 48px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background: var(--primary);
+  color: var(--side);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  font-family: Poppins, sans-serif;
+}
+
+.page-btn:hover:not(.disabled):not(.active) {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.page-btn.active {
+  background: #8b2e47;
+  box-shadow: 0 2px 8px rgba(80,25,38,0.4);
+  transform: translateY(-1px);
+}
+
+.page-btn.disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.page-ellipsis {
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0 4px;
+}
