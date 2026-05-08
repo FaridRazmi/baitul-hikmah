@@ -1,12 +1,26 @@
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
-fetch("../data/books.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const selectedBook = data.find((book) => book.id == bookId);
 
-    displayBookDetails(selectedBook);
-  });
+if (!bookId) {
+  document.getElementById("bookDetail").innerHTML = `
+    <div style="text-align:center; padding: 60px 24px; color: var(--primary);">
+      <p style="font-size:1.2rem;">No book selected. <a href="catalogue.html" style="color:var(--primary); font-weight:600;">Browse the catalogue</a>.</p>
+    </div>`;
+} else {
+  fetch("../data/books.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const selectedBook = data.find((book) => book.id == bookId);
+      if (!selectedBook) {
+        document.getElementById("bookDetail").innerHTML = `
+          <div style="text-align:center; padding: 60px 24px; color: var(--primary);">
+            <p style="font-size:1.2rem;">Book not found. <a href="catalogue.html" style="color:var(--primary); font-weight:600;">Back to catalogue</a>.</p>
+          </div>`;
+        return;
+      }
+      displayBookDetails(selectedBook);
+    });
+}
 
 function displayBookDetails(book) {
   const container = document.getElementById("bookDetail");

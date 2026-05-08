@@ -36,3 +36,16 @@
 }
 
 .hero-btn:hover { opacity: 0.85; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 20px 40px;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}

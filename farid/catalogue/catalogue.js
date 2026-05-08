@@ -30,14 +30,15 @@ function displayBooks(books) {
   books.forEach((book) => {
     container.innerHTML += `
         <div class="book-card">
-                <img src="${book.image}">
-                <h3>${book.title}</h3>
-                <p>${book.author}</p>
-                <p>${book.category}</p>
-                <p>Rating: ${book.rating}</p>
-                <button onclick="goToDetails(${book.id})">View Details</button>
-            </div>
-        `;
+          <img src="${book.image}" alt="${book.title}">
+          <h3>${book.title}</h3>
+          <p>${book.author}</p>
+          <p>${book.category}</p>
+          <p>Rating: ${book.rating}</p>
+          <div class="card-spacer"></div>
+          <button onclick="goToDetails(${book.id})">View Details</button>
+        </div>
+      `;
   });
 }
 
