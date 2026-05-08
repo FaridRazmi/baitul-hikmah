@@ -3,32 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="catalogue.css" />
+    <title>Catalogue – Baitul Hikmah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../shared/navbar.css" />
+    <link rel="stylesheet" href="catalogue.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-      .navbar a.bag-icon-link::after { display: none; }
-    </style>
   </head>
   <body>
     <!-- navbar start -->
     <div class="navbar">
       <div class="nav-brand">
         <h2>Baitul Hikmah</h2>
-        <div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-          <i data-feather="menu"></i>
+
+        <!-- Mobile toolbar: search + filter + hamburger sit in one row -->
+        <div class="mobile-toolbar">
+          <select id="categoryFilterMobile" class="filter">
+            <option value="all">All</option>
+            <option value="Science Fiction">Sci-Fi</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Technology">Tech</option>
+          </select>
+          <form class="search" onsubmit="event.preventDefault();">
+            <input type="text" id="searchInputMobile" name="q" placeholder="Search…" autocomplete="off" />
+            <button type="submit">
+              <i data-feather="search" style="width: 14px; height: auto"></i>
+            </button>
+          </form>
+          <div class="hamburger" id="hamburgerBtn">
+            <i data-feather="menu"></i>
+          </div>
         </div>
       </div>
-      <div class="nav-menu">
+
+      <div class="nav-menu" id="navMenu">
         <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <a href="../../hadif/homepage.html">Home</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="../../adib/aboutUs.html">About Us</a>
         </div>
         <div class="nav-right">
           <select id="categoryFilter" class="filter">
@@ -38,29 +52,38 @@
             <option value="Mystery">Mystery</option>
             <option value="Technology">Technology</option>
           </select>
-          <form
-            class="search"
-            onsubmit="event.preventDefault();"
-          >
+          <form class="search" onsubmit="event.preventDefault();">
             <input type="text" id="searchInput" name="q" placeholder="search" autocomplete="off" />
             <button type="submit">
               <i data-feather="search" style="width: 15px; height: auto"></i>
             </button>
           </form>
-          <a href="bag.html" class="bag-icon-link" style="color: var(--side); margin-left: 10px;">
-             <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
+          <a href="bag.html" class="bag-icon-link">
+            <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
           </a>
         </div>
       </div>
     </div>
     <hr />
-    <!-- navabar end -->
-    <!-- hero start -->
+    <!-- navbar end -->
+
+    <!-- Results count + pagination wrapper -->
+    <div class="catalogue-toolbar">
+      <p id="resultsCount" class="results-count"></p>
+    </div>
+
     <div id="bookContainer"></div>
-    <!-- hero end -->
+
+    <!-- Pagination controls -->
+    <div class="pagination" id="pagination"></div>
+
+    <script src="catalogue.js"></script>
+    <script>
+      feather.replace();
+      // Hamburger toggle
+      document.getElementById('hamburgerBtn').addEventListener('click', function () {
+        document.getElementById('navMenu').classList.toggle('active');
+      });
+    </script>
   </body>
-  <script src="catalogue.js"></script>
-  <script>
-    feather.replace();
-  </script>
 </html>

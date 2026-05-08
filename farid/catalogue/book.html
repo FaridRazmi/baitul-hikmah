@@ -3,18 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="book.css" />
+    <title>Book Detail – Baitul Hikmah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../shared/navbar.css" />
+    <link rel="stylesheet" href="book.css" />
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-      .navbar a.bag-icon-link::after { display: none; }
-    </style>
   </head>
   <body>
     <!-- navbar start -->
@@ -27,44 +22,36 @@
       </div>
       <div class="nav-menu">
         <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <a href="../../hadif/homepage.html">Home</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="../../adib/aboutUs.html">About Us</a>
         </div>
         <div class="nav-right">
-          <select class="filter" onchange="alert('Filtering by: ' + this.value)">
+          <select class="filter" onchange="if(this.value!=='all') window.location.href='catalogue.html?category='+encodeURIComponent(this.value); else window.location.href='catalogue.html';">
             <option value="all">All Categories</option>
             <option value="Science Fiction">Science Fiction</option>
             <option value="Fantasy">Fantasy</option>
             <option value="Mystery">Mystery</option>
             <option value="Technology">Technology</option>
           </select>
-          <form
-            class="search"
-            onsubmit="
-              event.preventDefault();
-              if (this.q.value) alert('Searching for: ' + this.q.value);
-            "
-          >
+          <form class="search" onsubmit="event.preventDefault(); if(this.q.value) window.location.href='catalogue.html?search='+encodeURIComponent(this.q.value);">
             <input type="text" name="q" placeholder="search" autocomplete="off" />
             <button type="submit">
               <i data-feather="search" style="width: 15px; height: auto"></i>
             </button>
           </form>
-          <a href="bag.html" class="bag-icon-link" style="color: var(--tulisan); margin-left: 10px;">
-             <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
+          <a href="bag.html" class="bag-icon-link">
+            <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
           </a>
         </div>
       </div>
     </div>
     <hr />
-    <!-- navabar end -->
-    <!-- hero start -->
+    <!-- navbar end -->
 
     <div id="bookDetail"></div>
-    <!-- hero end -->
+
+    <script src="book.js"></script>
+    <script>feather.replace();</script>
   </body>
-  <script src="book.js"></script>
-  <script>
-    feather.replace();
-  </script>
 </html>

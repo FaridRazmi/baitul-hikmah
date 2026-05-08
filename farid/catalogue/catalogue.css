@@ -1,10 +1,12 @@
+/* ── Design tokens (match navbar.css) ── */
 :root {
   --primary: #501926;
   --side: #e6dcd0;
 }
 
 * {
-  font-family: poppins;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,174 +14,107 @@ body {
   margin: 0;
   padding: 0;
 }
-/* navbar start */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 28px;
-  background-color: #501926;
-  flex-wrap: wrap;
-}
 
-.nav-brand {
-  display: flex;
-  justify-content: space-between;
+/* ═══════════════════════════════
+   Mobile toolbar (beside hamburger)
+   — hidden on desktop, shown on ≤768px
+   ═══════════════════════════════ */
+.mobile-toolbar {
+  display: none; /* desktop: hidden */
   align-items: center;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  color: var(--side);
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 8px;
   flex: 1;
-  margin-left: 28px;
+  justify-content: flex-end;
 }
 
-.navbar h2 {
-  margin: 0;
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
+.mobile-toolbar .filter {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
   color: var(--side);
-  letter-spacing: 0.5px;
+  border-radius: 6px;
+  padding: 5px 6px;
+  font-size: 0.75rem;
+  max-width: 80px;
+  cursor: pointer;
 }
 
-.nav-links {
+.mobile-toolbar .search {
   display: flex;
-  gap: 28px;
   align-items: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 1;
+  max-width: 140px;
 }
 
-.navbar a {
+.mobile-toolbar .search input {
+  border: none;
+  background: transparent;
   color: var(--side);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 400;
-  position: relative;
-  padding-bottom: 2px;
-  transition: opacity 0.2s ease;
-}
-
-.navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1.5px;
-  background-color: var(--side);
-  transition: width 0.25s ease;
-}
-
-.navbar a:hover::after {
+  font-size: 0.8rem;
+  padding: 5px 8px;
   width: 100%;
-}
-
-.navbar a:hover {
-  opacity: 0.75;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.navbar .filter {
-  padding: 6px 14px;
-  border: 1.5px solid var(--side);
-  border-radius: 20px;
-  font-size: 0.85rem;
-  background-color: transparent;
-  color: var(--side);
-  cursor: pointer;
   outline: none;
-  font-family: inherit;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
 }
 
-.navbar .filter:hover {
-  background-color: var(--side);
-  color: var(--primary);
-}
+.mobile-toolbar .search input::placeholder { color: rgba(230,220,208,0.6); }
 
-.navbar .filter option {
-  color: var(--primary);
-  background-color: var(--side);
-}
-
-.navbar .search {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border: 1.5px solid var(--side);
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: var(--side);
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.navbar .search:hover {
-  background-color: var(--side);
-  color: var(--primary);
-}
-
-.navbar .search:hover svg {
-  stroke: var(--primary);
-}
-
-.navbar .search::after {
-  display: none;
-}
-
-.navbar .search input {
+.mobile-toolbar .search button {
   background: transparent;
   border: none;
-  outline: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  width: 48px;
-  padding: 0;
-}
-
-.navbar .search input::placeholder {
-  color: inherit;
-  opacity: 1;
-}
-
-.navbar .search button {
-  background: transparent;
-  border: none;
-  padding: 0;
+  color: var(--side);
+  padding: 5px 8px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  color: inherit;
-  outline: none;
 }
 
-hr {
-  border: none;
-  border-top: 1.5px solid var(--side);
+/* ── nav-brand must be full-width on mobile ── */
+@media (max-width: 768px) {
+  .nav-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-toolbar { display: flex; }
+
+  /* Hide the desktop search/filter/bag from the sidebar on mobile */
+  .nav-menu .nav-right .filter,
+  .nav-menu .nav-right .search {
+    display: none;
+  }
+
+  /* Keep the bag icon visible in the sidebar */
+  .nav-menu .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* ═══════════════════════════════
+   Catalogue toolbar (results count)
+   ═══════════════════════════════ */
+.catalogue-toolbar {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.results-count {
   margin: 0;
-  opacity: 0.3;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  opacity: 0.75;
+  letter-spacing: 0.3px;
 }
-/* navbar end */
 
-/* hero start */
+/* ── Book grid ── */
 
 #bookContainer {
   display: grid;
@@ -193,40 +128,23 @@ hr {
   color: var(--side);
 }
 
-@media (max-width: 768px) {
-  .nav-brand {
-    width: 100%;
-  }
-  .hamburger {
-    display: block;
-  }
-  .nav-menu {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;
-    margin-top: 15px;
-    gap: 15px;
-  }
-  .nav-menu.active {
-    display: flex;
-  }
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 100%;
-  }
-  .nav-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 100%;
-  }
+/* ── Responsive grid ── */
+@media (max-width: 1024px) {
   #bookContainer {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #bookContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #bookContainer {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
   }
 }
 
@@ -237,21 +155,105 @@ hr {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Flex column so button always sticks to the bottom */
+  display: flex;
+  flex-direction: column;
 }
 
 .book-card img {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
   border: 3px solid var(--side);
+  flex-shrink: 0;
+}
+
+.book-card h3 {
+  margin: 10px 0 4px;
+  font-size: 0.95rem;
+  color: var(--side);
+}
+
+.book-card p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: var(--side);
+  opacity: 0.85;
+}
+
+/* Flex-grow spacer to push button to bottom */
+.book-card .card-spacer {
+  flex: 1;
 }
 
 .book-card button {
   background-color: var(--side);
-  margin: 10px auto;
-  margin-bottom: 0px;
-  padding: 7px;
+  color: var(--primary);
+  width: 100%;
+  margin-top: auto;
+  padding: 8px 7px;
   border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-/* hero end */
+.book-card button:hover {
+  opacity: 0.85;
+}
+
+/* Bag page */
+.bag-header { text-align: center; color: var(--primary); margin-top: 30px; }
+
+.empty-bag { text-align: center; color: var(--primary); margin-top: 50px; font-size: 1.2rem; }
+
+.checkout-container { text-align: center; margin-top: 30px; margin-bottom: 30px; }
+
+/* ═══════════════════════════════
+   Pagination
+   ═══════════════════════════════ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 32px 20px 48px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background: var(--primary);
+  color: var(--side);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  font-family: Poppins, sans-serif;
+}
+
+.page-btn:hover:not(.disabled):not(.active) {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.page-btn.active {
+  background: #8b2e47;
+  box-shadow: 0 2px 8px rgba(80,25,38,0.4);
+  transform: translateY(-1px);
+}
+
+.page-btn.disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.page-ellipsis {
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0 4px;
+}

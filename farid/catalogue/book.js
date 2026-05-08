@@ -1,12 +1,26 @@
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
-fetch("../data/books.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const selectedBook = data.find((book) => book.id == bookId);
 
-    displayBookDetails(selectedBook);
-  });
+if (!bookId) {
+  document.getElementById("bookDetail").innerHTML = `
+    <div style="text-align:center; padding: 60px 24px; color: var(--primary);">
+      <p style="font-size:1.2rem;">No book selected. <a href="catalogue.html" style="color:var(--primary); font-weight:600;">Browse the catalogue</a>.</p>
+    </div>`;
+} else {
+  fetch("../data/books.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const selectedBook = data.find((book) => book.id == bookId);
+      if (!selectedBook) {
+        document.getElementById("bookDetail").innerHTML = `
+          <div style="text-align:center; padding: 60px 24px; color: var(--primary);">
+            <p style="font-size:1.2rem;">Book not found. <a href="catalogue.html" style="color:var(--primary); font-weight:600;">Back to catalogue</a>.</p>
+          </div>`;
+        return;
+      }
+      displayBookDetails(selectedBook);
+    });
+}
 
 function displayBookDetails(book) {
   const container = document.getElementById("bookDetail");
@@ -15,6 +29,8 @@ function displayBookDetails(book) {
   for (let i = 0; i < Math.floor(book.rating); i++) {
     stars += "⭐";
   }
+
+  // masuk
 
   container.innerHTML = `
         <div class="detail-container">
@@ -41,13 +57,13 @@ function displayBookDetails(book) {
     `;
 }
 
-window.addToBag = function(bookId) {
-  let bag = JSON.parse(localStorage.getItem('bag')) || [];
+window.addToBag = function (bookId) {
+  let bag = JSON.parse(localStorage.getItem("bag")) || [];
   if (!bag.includes(bookId)) {
     bag.push(bookId);
-    localStorage.setItem('bag', JSON.stringify(bag));
-    alert('Book added to bag!');
+    localStorage.setItem("bag", JSON.stringify(bag));
+    alert("Book added to bag!");
   } else {
-    alert('Book is already in the bag!');
+    alert("Book is already in the bag!");
   }
-}
+};

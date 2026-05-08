@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Bag – Baitul Hikmah</title>
+    <title>Checkout – Baitul Hikmah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../shared/navbar.css" />
-    <link rel="stylesheet" href="catalogue.css" />
+    <link rel="stylesheet" href="../shared/navbar.css" />
+    <link rel="stylesheet" href="checkout.css" />
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
@@ -22,12 +22,12 @@
       </div>
       <div class="nav-menu">
         <div class="nav-links">
-          <a href="../../hadif/homepage.html">Home</a>
-          <a href="catalogue.html">Catalogue</a>
-          <a href="../../adib/aboutUs.html">About Us</a>
+          <a href="../hadif/homepage.html">Home</a>
+          <a href="../farid/catalogue/catalogue.html">Catalogue</a>
+          <a href="../adib/aboutUs.html">About Us</a>
         </div>
         <div class="nav-right">
-          <a href="bag.html" class="bag-icon-link">
+          <a href="../farid/catalogue/bag.html" class="bag-icon-link">
             <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
           </a>
         </div>
@@ -36,10 +36,15 @@
     <hr />
     <!-- navbar end -->
 
-    <h2 class="bag-header">Your Bag</h2>
-    <div id="bookContainer"></div>
-    <div id="checkoutContainer" class="checkout-container"></div>
+    <div class="page-content">
+      <h1>Checkout</h1>
+      <div class="checkout-box">
+        <p>Review your borrowed books and confirm your borrowing request below.</p>
+        <div id="checkoutItems"><p>Loading items...</p></div>
+        <button class="confirm-btn" onclick="confirmBorrow()">Confirm Borrow</button>
+      </div>
+    </div>
 
-    <script src="bag.js"></script>
+    <script src="checkout.js"></script>
   </body>
 </html>
