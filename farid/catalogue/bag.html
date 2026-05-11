@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Bag – Baitul Hikmah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../shared/navbar.css" />
+    <link rel="stylesheet" href="catalogue.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- navbar start -->
+    <div class="navbar">
+      <div class="nav-brand">
+        <h2>Baitul Hikmah</h2>
+        <div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="../../hadif/homepage.html">Home</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="../../adib/aboutUs.html">About Us</a>
+        </div>
+        <div class="nav-right">
+          <a href="bag.html" class="bag-icon-link">
+            <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- navbar end -->
+
+    <h2 class="bag-header">Your Bag</h2>
+    <div id="bookContainer"></div>
+    <div id="checkoutContainer" class="checkout-container"></div>
+
+    <script src="bag.js"></script>
+  </body>
+</html>
