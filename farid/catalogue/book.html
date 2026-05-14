@@ -26,20 +26,6 @@
           <a href="catalogue.html">Catalogue</a>
           <a href="../../adib/aboutUs.html">About Us</a>
         </div>
-        <div class="nav-right">
-          <select class="filter" onchange="if(this.value!=='all') window.location.href='catalogue.html?category='+encodeURIComponent(this.value); else window.location.href='catalogue.html';">
-            <option value="all">All Categories</option>
-            <option value="Science Fiction">Science Fiction</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Technology">Technology</option>
-          </select>
-          <form class="search" onsubmit="event.preventDefault(); if(this.q.value) window.location.href='catalogue.html?search='+encodeURIComponent(this.q.value);">
-            <input type="text" name="q" placeholder="search" autocomplete="off" />
-            <button type="submit">
-              <i data-feather="search" style="width: 15px; height: auto"></i>
-            </button>
-          </form>
           <a href="bag.html" class="bag-icon-link">
             <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
           </a>

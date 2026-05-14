@@ -13,8 +13,7 @@ body {
   padding: 0;
 }
 
-
-/* hero start */
+/* Book Detail */
 .detail-container {
   width: 800px;
   max-width: 90%;
@@ -66,7 +65,7 @@ body {
 }
 
 .detail-actions button {
-  background-color: #bcaaa4; /* match the brownish color in the image */
+  background-color: #bcaaa4;
   color: var(--primary);
   border: none;
   padding: 8px 16px;
@@ -76,7 +75,7 @@ body {
 
 .detail-rating {
   margin-bottom: 20px;
-  background-color: #bcaaa4; /* match the brownish color in the image */
+  background-color: #bcaaa4;
   padding: 8px 16px;
   display: inline-block;
 }
@@ -89,7 +88,7 @@ body {
 }
 
 .stars {
-  color: #ffb400; /* Yellow star color */
+  color: #ffb400;
 }
 
 .back-link {
@@ -119,4 +118,3 @@ body {
     justify-content: center;
   }
 }
-/* hero end */

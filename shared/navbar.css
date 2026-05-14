@@ -47,10 +47,9 @@ body {
 
 .nav-menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex: 1;
-  margin-left: 28px;
 }
 
 .nav-links {
@@ -80,17 +79,24 @@ body {
   transition: width 0.25s ease;
 }
 
-.navbar a:hover::after { width: 100%; }
-.navbar a:hover        { opacity: 0.75; }
+.navbar a:hover::after {
+  width: 100%;
+}
+.navbar a:hover {
+  opacity: 0.75;
+}
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-left: 90px;
 }
 
 /* Bag icon — no underline animation */
-.navbar a.bag-icon-link::after { display: none; }
+.navbar a.bag-icon-link::after {
+  display: none;
+}
 
 hr {
   border: none;
@@ -101,8 +107,13 @@ hr {
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .nav-brand { width: 100%; }
-  .hamburger { display: block; z-index: 1001; }
+  .nav-brand {
+    width: 100%;
+  }
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
   .nav-menu {
     position: fixed;
     top: 0;
@@ -112,7 +123,8 @@ hr {
     background-color: var(--primary);
     flex-direction: column;
     align-items: flex-start;
-    padding: 60px 20px 20px 20px;
+    justify-content: flex-start;
+    padding: 60px 20px;
     margin: 0;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
@@ -122,6 +134,18 @@ hr {
     right: 0; /* Slide in */
     display: flex;
   }
-  .nav-links { flex-direction: column; align-items: flex-start; gap: 20px; width: 100%; }
-  .nav-right  { flex-direction: column; align-items: flex-start; gap: 20px; width: 100%; margin-top: 20px;}
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+  }
 }

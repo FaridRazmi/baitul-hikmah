@@ -6,7 +6,10 @@
     <title>Catalogue – Baitul Hikmah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../shared/navbar.css" />
     <link rel="stylesheet" href="catalogue.css" />
     <script src="https://unpkg.com/feather-icons"></script>
@@ -17,17 +20,24 @@
       <div class="nav-brand">
         <h2>Baitul Hikmah</h2>
 
-        <!-- Mobile toolbar: search + filter + hamburger sit in one row -->
+        <!-- Mobile toolbar: search + filter + hamburger -->
         <div class="mobile-toolbar">
           <select id="categoryFilterMobile" class="filter">
             <option value="all">All</option>
-            <option value="Science Fiction">Sci-Fi</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Mystery">Mystery</option>
-            <option value="Technology">Tech</option>
+              <option value="Science Fiction">Sci-Fi</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Technology">Tech</option>
+            </div>
           </select>
-          <form class="search" onsubmit="event.preventDefault();">
-            <input type="text" id="searchInputMobile" name="q" placeholder="Search…" autocomplete="off" />
+          <form class="search" onsubmit="event.preventDefault()">
+            <input
+              type="text"
+              id="searchInputMobile"
+              name="q"
+              placeholder="Search…"
+              autocomplete="off"
+            />
             <button type="submit">
               <i data-feather="search" style="width: 14px; height: auto"></i>
             </button>
@@ -52,14 +62,23 @@
             <option value="Mystery">Mystery</option>
             <option value="Technology">Technology</option>
           </select>
-          <form class="search" onsubmit="event.preventDefault();">
-            <input type="text" id="searchInput" name="q" placeholder="search" autocomplete="off" />
+          <form class="search" onsubmit="event.preventDefault()">
+            <input
+              type="text"
+              id="searchInput"
+              name="q"
+              placeholder="search"
+              autocomplete="off"
+            />
             <button type="submit">
               <i data-feather="search" style="width: 15px; height: auto"></i>
             </button>
           </form>
           <a href="bag.html" class="bag-icon-link">
-            <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
+            <i
+              data-feather="shopping-bag"
+              style="width: 20px; height: auto"
+            ></i>
           </a>
         </div>
       </div>
@@ -81,9 +100,11 @@
     <script>
       feather.replace();
       // Hamburger toggle
-      document.getElementById('hamburgerBtn').addEventListener('click', function () {
-        document.getElementById('navMenu').classList.toggle('active');
-      });
+      document
+        .getElementById("hamburgerBtn")
+        .addEventListener("click", function () {
+          document.getElementById("navMenu").classList.toggle("active");
+        });
     </script>
   </body>
 </html>
