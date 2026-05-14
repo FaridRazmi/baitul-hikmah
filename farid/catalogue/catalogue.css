@@ -38,10 +38,6 @@ body {
   cursor: pointer;
   background-color: #501926;
 }
-.mobile-toolbar .filter .all {
-  background: rgba(255, 255, 255, 0.15);
-}
-
 .mobile-toolbar .search {
   display: flex;
   align-items: center;
