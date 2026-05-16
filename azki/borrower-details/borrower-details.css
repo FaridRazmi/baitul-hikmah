@@ -47,12 +47,10 @@
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 0.95rem;
-  font-family: 'Poppins', sans-serif;
   color: var(--side);
   outline: none;
   transition: border-color 0.2s, background 0.2s;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .form-group input::placeholder {
@@ -86,7 +84,6 @@
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: opacity 0.2s;
 }
