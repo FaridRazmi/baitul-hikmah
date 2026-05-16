@@ -26,7 +26,7 @@ function loadBag() {
         `;
       });
       document.getElementById("checkoutContainer").innerHTML = `
-        <a href="../../azki/checkout.html">
+        <a href="../../azki/borrower-details/borrower-details.html">
           <button style="padding: 10px 20px; background-color: var(--primary); color: var(--side); border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; margin: 20px;">Borrow Now</button>
         </a>
       `;
