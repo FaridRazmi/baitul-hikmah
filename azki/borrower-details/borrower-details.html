@@ -6,9 +6,13 @@
     <title>Borrower Details – Baitul Hikmah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../../shared/navbar.css" />
     <link rel="stylesheet" href="borrower-details.css" />
+    <script src="../shared/grayscale.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
@@ -16,7 +20,12 @@
     <div class="navbar">
       <div class="nav-brand">
         <h2>Baitul Hikmah</h2>
-        <div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+        <div
+          class="hamburger"
+          onclick="
+            document.querySelector('.nav-menu').classList.toggle('active')
+          "
+        >
           <i data-feather="menu"></i>
         </div>
       </div>
@@ -28,7 +37,10 @@
         </div>
         <div class="nav-right">
           <a href="../farid/catalogue/bag.html" class="bag-icon-link">
-            <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
+            <i
+              data-feather="shopping-bag"
+              style="width: 20px; height: auto"
+            ></i>
           </a>
         </div>
       </div>
@@ -79,7 +91,9 @@
           </ul>
         </div>
 
-        <button class="proceed-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        <button class="proceed-btn" onclick="proceedToCheckout()">
+          Proceed to Checkout
+        </button>
       </div>
     </div>
 

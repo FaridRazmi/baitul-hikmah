@@ -35,7 +35,9 @@
   transition: opacity 0.2s;
 }
 
-.hero-btn:hover { opacity: 0.85; }
+.hero-btn:hover {
+  opacity: 0.85;
+}
 
 /* ── Responsive ── */
 @media (max-width: 480px) {
@@ -52,49 +54,65 @@
 
 /* Gray scale function */
 body {
-      transition: filter 0.4s ease;
-    }
-    body.grayscale {
-      filter: grayscale(100%);
-    }
+  transition: filter 0.4s ease;
+}
+body.grayscale {
+  filter: grayscale(100%);
+}
 
-    #grey-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      padding: 10px 20px;
-      background: var(--side);
-      color: var(--primary);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      z-index: 9999;
-    }
-    #grey-btn:hover {
-      background: #555;
-      background-color: #b0b0b0;
-    }
-    /* ── FOOTER ── */
-  footer {
-    background: var(--primary);
-    color: var(--side);
-    padding: 2.5rem 2rem 1.5rem;
-    text-align: center;
-  }
+/* ── Grayscale button ── */
+#grey-btn {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: var(--side);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+#grey-btn:hover {
+  background-color: #6b2a3a;
+}
 
-  footer .footer-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.4rem;
-    color: var(--gold-light);
-    margin-bottom: 0.5rem;
-  }
+/* ── FOOTER ── */
+footer {
+  background: var(--primary);
+  color: var(--side);
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: center;
+}
 
-  footer p { font-size: 0.85rem; opacity: 0.7; margin-bottom: 1.2rem; }
+footer .footer-logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
 
-  #map-container {
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Map Section ── */
+.map-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 24px 16px;
+}
+
+#map-container {
   overflow: hidden;
   max-height: 0;
+  width: 100%;
   transition: max-height 0.5s ease;
 }
 
@@ -103,17 +121,17 @@ body {
 }
 
 #map-btn {
-  padding: 10px 20px;
+  padding: 10px 24px;
   background-color: #6b1a2a;
   color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-size: 14px;
-  margin-bottom: 10px;
-  margin-left:3px ;
+  transition: background-color 0.2s;
 }
 
 #map-btn:hover {
   background-color: #8b2a3a;
 }
+

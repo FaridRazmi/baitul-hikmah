@@ -1,89 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home – Baitul Hikmah</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../shared/navbar.css" />
-  <link rel="stylesheet" href="homepage.css" />
-  <link rel="stylesheet" href="map.css">
-  <script src="https://unpkg.com/feather-icons"></script>
-  
-</head>
-<body>
-  <!-- navbar start -->
-  <div class="navbar">
-    <div class="nav-brand">
-      <h2>Baitul Hikmah</h2>
-      <div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-        <i data-feather="menu"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home – Baitul Hikmah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/navbar.css" />
+    <link rel="stylesheet" href="homepage.css" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- navbar start -->
+    <div class="navbar">
+      <div class="nav-brand">
+        <h2>Baitul Hikmah</h2>
+        <div
+          class="hamburger"
+          onclick="
+            document.querySelector('.nav-menu').classList.toggle('active')
+          "
+        >
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="homepage.html">Home</a>
+          <a href="../farid/catalogue/catalogue.html">Catalogue</a>
+          <a href="../adib/aboutUs.html">About Us</a>
+        </div>
+        <div class="nav-right">
+          <a href="../farid/catalogue/bag.html" class="bag-icon-link">
+            <i
+              data-feather="shopping-bag"
+              style="width: 20px; height: auto"
+            ></i>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="nav-menu">
-      <div class="nav-links">
-        <a href="homepage.html">Home</a>
-        <a href="../farid/catalogue/catalogue.html">Catalogue</a>
-        <a href="../adib/aboutUs.html">About Us</a>
+    <hr />
+    <!-- navbar end -->
+
+    <div class="hero">
+      <h1>Welcome to Baitul Hikmah</h1>
+      <p>
+        Your digital house of wisdom. Discover, explore, and borrow books from
+        our curated collection.
+      </p>
+      <a
+        href="../farid/catalogue/catalogue.html"
+        class="hero-btn"
+        onclick="return confirmCatalogue();"
+        >Browse Catalogue</a
+      >
+
+      <script>
+        function confirmCatalogue() {
+          return window.confirm(
+            "Reminder ! you are borrowing a physical book.",
+          );
+          // OK = pergi catalogue, Cancel = stay kat page
+        }
+      </script>
+    </div>
+    <!-- Map & Grayscale Section -->
+    <div class="map-section">
+      <div class="button-row">
+        <button onclick="toggleMap()" id="map-btn">📍 View Location</button>
+        <button id="grey-btn" onclick="toggleGrayscale()">🌓 Grayscale</button>
       </div>
-      <div class="nav-right">
-        <a href="../farid/catalogue/bag.html" class="bag-icon-link">
-          <i data-feather="shopping-bag" style="width: 20px; height: auto"></i>
-        </a>
+
+      <!-- Map Container - hidden by default -->
+      <div id="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.392520428242!2d103.05703997310187!3d3.7242866493519275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31c8cd3c201f6e7d%3A0x1cb18a28171e00a!2sDarul%20Hikmah(CFS%20Library)!5e0!3m2!1sen!2smy!4v1778834037026!5m2!1sen!2smy"
+          width="100%"
+          height="350"
+          style="border: 0; display: block"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
       </div>
     </div>
-  </div>
-  <hr />
-  <!-- navbar end -->
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-logo">Baitul Hikmah</div>
+      <p>Knowledge is the light that guides us from cradle to grave.</p>
+      <p class="copyright">
+        © 2026 Baitul Hikmah Library. All rights reserved.
+      </p>
+    </footer>
 
-  <div class="hero">
-    <h1>Welcome to Baitul Hikmah</h1>
-    <p>Your digital house of wisdom. Discover, explore, and borrow books from our curated collection.</p>
-    <a href="../farid/catalogue/catalogue.html" class="hero-btn" onclick="return confirmCatalogue()">Browse Catalogue</a>
-
-<script>
-  function confirmCatalogue() {
-    return window.confirm("Reminder ! you are borrowing a physical book.");
-    // OK = pergi catalogue, Cancel = stay kat page
-  }
-</script>
-  </div>
-
-
-<!-- Button -->
-<button onclick="toggleMap()" id="map-btn">📍 Find us</button>
-
-<!-- Map Container - hidden by default -->
-<div id="map-container">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.392520428242!2d103.05703997310187!3d3.7242866493519275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31c8cd3c201f6e7d%3A0x1cb18a28171e00a!2sDarul%20Hikmah(CFS%20Library)!5e0!3m2!1sen!2smy!4v1778834037026!5m2!1sen!2smy" 
-    width="1500" 
-    height="250" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
- <!-- GRAYSCALE -->
-  <button id="grey-btn" onclick="toggleGrayscale()">
-    Grayscale
-  </button>
-
-  <!-- FOOTER -->
-<footer id="contact">
-  <div class="footer-logo">Baitul Hikmah</div>
-  <p>Knowledge is the light that guides us from cradle to grave.</p>
- <p class="copyright">© 2026 Baitul Hikmah Library. All rights reserved.</p>
-</footer>
-
-
-
-  <script src="../shared/grayscale.js"></script>
-  <script>feather.replace();</script>
-  <script src="homepage.js"></script>
-</body>
+    <script src="../shared/grayscale.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="homepage.js"></script>
+  </body>
 </html>
