@@ -1,17 +1,4 @@
-:root {
-  --primary: #501926;
-  --tulisan: #e6dcd0;
-}
 
-* {
-  font-family: poppins;
-}
-
-body {
-  background-color: var(--tulisan);
-  margin: 0;
-  padding: 0;
-}
 
 /* Book Detail */
 .detail-container {

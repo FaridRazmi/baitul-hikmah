@@ -39,26 +39,74 @@
   opacity: 0.85;
 }
 
-/* ── Responsive ── */
-@media (max-width: 480px) {
+/* ── Responsive: Tablet (≤768px) ── */
+@media (max-width: 768px) {
   .hero {
-    padding: 50px 20px 40px;
+    padding: 60px 20px 40px;
   }
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
   }
   .hero p {
     font-size: 1rem;
+    max-width: 90%;
   }
+  .hero-btn {
+    padding: 10px 28px;
+    font-size: 0.9rem;
+  }
+
+  .button-row {
+    padding: 0 16px 12px;
+  }
+  #map-btn,
+  #grey-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  #map-container iframe {
+    height: 280px;
+  }
+
+
 }
 
-/* Gray scale function */
-body {
-  transition: filter 0.4s ease;
+/* ── Responsive: Phone (≤480px) ── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 16px 30px;
+  }
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+    max-width: 100%;
+    margin: 0 0 24px;
+  }
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+
+  .button-row {
+    padding: 0 12px 10px;
+  }
+  #map-btn,
+  #grey-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+  #map-container iframe {
+    height: 220px;
+  }
+
+
 }
-body.grayscale {
-  filter: grayscale(100%);
-}
+
+
+
 
 /* ── Grayscale button ── */
 #grey-btn {
@@ -75,26 +123,7 @@ body.grayscale {
   background-color: #6b2a3a;
 }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--primary);
-  color: var(--side);
-  padding: 2.5rem 2rem 1.5rem;
-  text-align: center;
-}
 
-footer .footer-logo {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.4rem;
-  color: var(--gold-light);
-  margin-bottom: 0.5rem;
-}
-
-footer p {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-bottom: 1.2rem;
-}
 
 /* ── Map Section ── */
 .map-section {
