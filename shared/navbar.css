@@ -13,6 +13,14 @@ body {
   background-color: var(--side);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: filter 0.4s ease;
+}
+
+body.grayscale {
+  filter: grayscale(100%);
 }
 
 /* ── Navbar ── */
@@ -147,5 +155,46 @@ hr {
     width: 100%;
     margin-top: 20px;
     margin-left: 0;
+  }
+}
+
+
+/* ── FOOTER ── */
+footer {
+  margin-top: auto;
+  background: var(--primary);
+  color: var(--side);
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: center;
+}
+
+footer .footer-logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 1.5rem 1rem 1rem;
+  }
+  footer .footer-logo {
+    font-size: 1.2rem;
+  }
+  footer p {
+    font-size: 0.8rem;
   }
 }

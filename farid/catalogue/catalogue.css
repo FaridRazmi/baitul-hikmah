@@ -1,19 +1,4 @@
-/* ── Design tokens (match navbar.css) ── */
-:root {
-  --primary: #501926;
-  --side: #e6dcd0;
-}
 
-* {
-  font-family: Poppins, sans-serif;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--side);
-  margin: 0;
-  padding: 0;
-}
 
 /* ═══════════════════════════════
    Mobile toolbar (beside hamburger)
@@ -155,7 +140,6 @@ body {
 .book-card {
   background: var(--primary);
   width: 100%;
-  box-sizing: border-box;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -232,7 +216,6 @@ body {
   transition:
     opacity 0.2s,
     transform 0.15s;
-  font-family: Poppins, sans-serif;
 }
 
 .page-btn:hover:not(.disabled):not(.active) {
