@@ -1,7 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
 
-
 if (!bookId) {
   document.getElementById("bookDetail").innerHTML = `
     <div style="text-align:center; padding: 60px 24px; color: var(--primary);">
@@ -28,7 +27,7 @@ function displayBookDetails(book) {
 
   let stars = "";
   for (let i = 0; i < Math.floor(book.rating); i++) {
-    stars += "⭐";
+    stars += "★";
   }
 
   container.innerHTML = `
