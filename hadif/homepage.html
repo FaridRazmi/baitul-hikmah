@@ -9,7 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../shared/navbar.css" />
   <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="map.css">
   <script src="https://unpkg.com/feather-icons"></script>
+  
 </head>
 <body>
   <!-- navbar start -->
@@ -39,9 +41,49 @@
   <div class="hero">
     <h1>Welcome to Baitul Hikmah</h1>
     <p>Your digital house of wisdom. Discover, explore, and borrow books from our curated collection.</p>
-    <a href="../farid/catalogue/catalogue.html" class="hero-btn">Browse Catalogue</a>
+    <a href="../farid/catalogue/catalogue.html" class="hero-btn" onclick="return confirmCatalogue()">Browse Catalogue</a>
+
+<script>
+  function confirmCatalogue() {
+    return window.confirm("Reminder ! you are borrowing a physical book.");
+    // OK = pergi catalogue, Cancel = stay kat page
+  }
+</script>
   </div>
 
+
+<!-- Button -->
+<button onclick="toggleMap()" id="map-btn">📍 Find us</button>
+
+<!-- Map Container - hidden by default -->
+<div id="map-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.392520428242!2d103.05703997310187!3d3.7242866493519275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31c8cd3c201f6e7d%3A0x1cb18a28171e00a!2sDarul%20Hikmah(CFS%20Library)!5e0!3m2!1sen!2smy!4v1778834037026!5m2!1sen!2smy" 
+    width="1500" 
+    height="250" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+ <!-- GRAYSCALE -->
+  <button id="grey-btn" onclick="toggleGrayscale()">
+    Grayscale
+  </button>
+
+  <!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">Baitul Hikmah</div>
+  <p>Knowledge is the light that guides us from cradle to grave.</p>
+ <p class="copyright">© 2026 Baitul Hikmah Library. All rights reserved.</p>
+</footer>
+
+
+
+  <script src="../shared/grayscale.js"></script>
   <script>feather.replace();</script>
+  <script src="homepage.js"></script>
 </body>
 </html>
