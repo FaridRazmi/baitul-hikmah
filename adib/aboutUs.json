@@ -1,0 +1,33 @@
+[
+    {
+        "name" : "MUHAMMAD HADIF",
+        "matricno" : "253674",
+        "role" : "Homepage Developer",
+        "image" : "gambar/hadif.jpg"
+        
+    },
+
+    {
+        "name" : "MUHAMMAD FARID",
+        "matricno" : "253580",
+        "role" : "Catalogue Developer",
+        "image" : "gambar/Farid.jpg"
+        
+    },
+
+    {
+        "name" : "MUHAMMAD AZKI",
+        "matricno" : "253398",
+        "role" : "Checkout Developer",
+        "image" : "gambar/azki.jpg"
+        
+    },
+
+    {
+        "name" : "ADIB SYAFIQI",
+        "matricno" : "250166",
+        "role" : "AboutUs Developer",
+        "image" : "gambar/adib.jpg"
+        
+    }
+]
