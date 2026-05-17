@@ -1,5 +1,3 @@
-
-
 /* ═══════════════════════════════
    Mobile toolbar (beside hamburger)
    — hidden on desktop, shown on ≤768px
@@ -127,13 +125,6 @@
 @media (max-width: 768px) {
   #bookContainer {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  #bookContainer {
-    grid-template-columns: 1fr;
-    padding: 0 16px;
   }
 }
 

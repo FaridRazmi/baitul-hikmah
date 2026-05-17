@@ -25,6 +25,7 @@ body {
 }
 
 html.grayscale {
+  transition: 0.5s;
   filter: grayscale(100%);
   height: 100vh;
 }
