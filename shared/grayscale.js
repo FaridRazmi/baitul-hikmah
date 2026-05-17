@@ -1,16 +1,16 @@
 function setGrayscale(enabled) {
-  document.body.classList.toggle('grayscale', enabled);
-  localStorage.setItem('grayscale', enabled ? '1' : '0');
+  document.documentElement.classList.toggle("grayscale", enabled);
+  localStorage.setItem("grayscale", enabled ? "1" : "0");
 }
 
 function toggleGrayscale() {
-  setGrayscale(!document.body.classList.contains('grayscale'));
+  setGrayscale(!document.documentElement.classList.contains("grayscale"));
 }
 
 function restoreGrayscale() {
-  if (localStorage.getItem('grayscale') === '1') {
-    document.body.classList.add('grayscale');
+  if (localStorage.getItem("grayscale") === "1") {
+    document.documentElement.classList.add("grayscale");
   }
 }
 
-document.addEventListener('DOMContentLoaded', restoreGrayscale);
+document.addEventListener("DOMContentLoaded", restoreGrayscale);
