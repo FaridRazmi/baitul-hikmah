@@ -46,6 +46,7 @@ function renderNavbar(links) {
     while (navExtras.firstChild) {
       bagLink.before(navExtras.firstChild);
     }
+    navExtras.remove();
   }
 
   // Hamburger toggle for mobile

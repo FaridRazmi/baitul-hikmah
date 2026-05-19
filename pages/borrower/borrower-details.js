@@ -11,32 +11,16 @@ document.getElementById("matricNo").addEventListener("input", function () {
 });
 
 // ── Date: auto-format as DD/MM/YY ──
-document.getElementById("borrowDate").addEventListener("input", function () {
-  let raw = this.value.replace(/\D/g, "").slice(0, 6);
-  let formatted = "";
-  if (raw.length <= 2) {
-    formatted = raw;
-  } else if (raw.length <= 4) {
-    formatted = raw.slice(0, 2) + "/" + raw.slice(2);
-  } else {
-    formatted = raw.slice(0, 2) + "/" + raw.slice(2, 4) + "/" + raw.slice(4);
-  }
-  this.value = formatted;
-});
-
-// ── Return Date: auto-format as DD/MM/YY ──
-document.getElementById("borrowReturn").addEventListener("input", function () {
-  let raw = this.value.replace(/\D/g, "").slice(0, 6);
-  let formatted = "";
-  if (raw.length <= 2) {
-    formatted = raw;
-  } else if (raw.length <= 4) {
-    formatted = raw.slice(0, 2) + "/" + raw.slice(2);
-  } else {
-    formatted = raw.slice(0, 2) + "/" + raw.slice(2, 4) + "/" + raw.slice(4);
-  }
-  this.value = formatted;
-});
+function autoFormatDate(inputId) {
+  document.getElementById(inputId).addEventListener("input", function () {
+    let raw = this.value.replace(/\D/g, "").slice(0, 6);
+    if (raw.length <= 2) this.value = raw;
+    else if (raw.length <= 4) this.value = raw.slice(0, 2) + "/" + raw.slice(2);
+    else this.value = raw.slice(0, 2) + "/" + raw.slice(2, 4) + "/" + raw.slice(4);
+  });
+}
+autoFormatDate("borrowDate");
+autoFormatDate("borrowReturn");
 
 // ── Proceed to checkout ──
 function proceedToCheckout() {
