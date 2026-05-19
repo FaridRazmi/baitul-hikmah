@@ -19,13 +19,13 @@ if (borrower) {
 } else {
   document.getElementById("borrowerInfo").innerHTML = `
     <div class="info-section">
-      <p style="opacity:0.6;">No borrower details found. <a href="../borrower-details/borrower-details.html" style="color:var(--side);">Go back</a></p>
+      <p style="opacity:0.6;">No borrower details found. <a href="../borrower/borrower-details.html" style="color:var(--side);">Go back</a></p>
     </div>`;
 }
 
 // ── Show books borrowed ──
 if (bag.length > 0) {
-  fetch("../../farid/data/books.json")
+  fetch("../../data/books.json")
     .then((res) => res.json())
     .then((data) => {
       const bagBooks = data.filter((book) => bag.map(Number).includes(book.id));
@@ -54,7 +54,7 @@ if (bag.length > 0) {
     });
 } else {
   document.getElementById("checkoutItems").innerHTML = `
-    <p>Your bag is empty. <a href="../../farid/catalogue/catalogue.html" style="color:var(--side);">Browse books</a></p>`;
+    <p>Your bag is empty. <a href="../catalogue/catalogue.html" style="color:var(--side);">Browse books</a></p>`;
 }
 
 // ── Confirm borrow ──
@@ -74,7 +74,7 @@ async function confirmBorrow() {
   // Fetch titles for Telegram message
   let bookLines = "";
   try {
-    const res = await fetch("../../farid/data/books.json");
+    const res = await fetch("../../data/books.json");
     const data = await res.json();
     const bagBooks = data.filter((book) => bag.map(Number).includes(book.id));
     bookLines = bagBooks

@@ -7,7 +7,7 @@ if (!bookId) {
       <p style="font-size:1.2rem;">No book selected. <a href="catalogue.html" style="color:var(--primary); font-weight:600;">Browse the catalogue</a>.</p>
     </div>`;
 } else {
-  fetch("../data/books.json")
+  fetch("../../data/books.json")
     .then((response) => response.json())
     .then((data) => {
       const selectedBook = data.find((book) => book.id == bookId);

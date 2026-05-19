@@ -14,7 +14,7 @@ const resultsCount = document.getElementById("resultsCount");
 const paginationEl = document.getElementById("pagination");
 
 // ── Load books ──
-fetch("../data/books.json")
+fetch("../../data/books.json")
   .then((r) => r.json())
   .then((data) => {
     allBooks = data;

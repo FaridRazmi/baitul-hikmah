@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogue – Baitul Hikmah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../shared/navbar.css" />
+    <link rel="stylesheet" href="../../shared/footer.css" />
+    <link rel="stylesheet" href="catalogue.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../../shared/components.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div id="navbar-placeholder">
+      <!-- catalogue only: mobile search + filter toolbar -->
+      <div class="mobile-toolbar">
+        <select id="categoryFilterMobile" class="filter">
+          <option value="all">All</option>
+          <option value="Science Fiction">Sci-Fi</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Technology">Tech</option>
+        </select>
+        <form class="search" onsubmit="event.preventDefault()">
+          <input type="text" id="searchInputMobile" name="q" placeholder="Search…" autocomplete="off" />
+          <button type="submit"><i data-feather="search" style="width:14px;height:auto"></i></button>
+        </form>
+      </div>
+
+      <!-- catalogue only: desktop search + filter in nav-right -->
+      <div class="catalogue-nav-extras">
+        <select id="categoryFilter" class="filter">
+          <option value="all">All Categories</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Technology">Technology</option>
+        </select>
+        <form class="search" onsubmit="event.preventDefault()">
+          <input type="text" id="searchInput" name="q" placeholder="search" autocomplete="off" />
+          <button type="submit"><i data-feather="search" style="width:15px;height:auto"></i></button>
+        </form>
+      </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- Results count + pagination wrapper -->
+    <div class="catalogue-toolbar">
+      <p id="resultsCount" class="results-count"></p>
+    </div>
+
+    <div id="bookContainer"></div>
+
+    <!-- Pagination controls -->
+    <div class="pagination" id="pagination"></div>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../../shared/grayscale.js"></script>
+    <script src="catalogue.js"></script>
+    <script>
+      renderNavbar([
+        { label: 'Home', href: '../home/home.html' },
+        { label: 'Catalogue', href: 'catalogue.html' },
+        { label: 'About Us', href: '../about/about.html' }
+      ]);
+      renderFooter();
+      feather.replace();
+    </script>
+  </body>
+</html>

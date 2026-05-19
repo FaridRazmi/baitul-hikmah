@@ -6,12 +6,12 @@ function loadBag() {
 
   if (bag.length === 0) {
     container.innerHTML =
-      "<p class='empty-bag'>Your bag is empty. <a href='catalogue.html'>Browse books</a></p>";
+      "<p class='empty-bag'>Your bag is empty. <a href='../catalogue/catalogue.html'>Browse books</a></p>";
     document.getElementById("checkoutContainer").innerHTML = "";
     return;
   }
 
-  fetch("../data/books.json")
+  fetch("../../data/books.json")
     .then((res) => res.json())
     .then((data) => {
       const bagBooks = data.filter((book) => bag.includes(book.id));
@@ -27,9 +27,7 @@ function loadBag() {
         `;
       });
       document.getElementById("checkoutContainer").innerHTML = `
-        <a href="../../azki/borrower-details/borrower-details.html">
-          <button style="padding: 10px 20px; background-color: var(--primary); color: var(--side); border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; margin: 20px;">Borrow Now</button>
-        </a>
+        <a href="../borrower/borrower-details.html"><button style="padding: 10px 20px; background-color: var(--primary); color: var(--side); border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; margin: 20px;">Borrow Now</button></a>
       `;
     });
 }
