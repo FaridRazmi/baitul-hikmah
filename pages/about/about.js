@@ -1,4 +1,4 @@
-fetch('aboutUs.json')
+fetch('about.json')
   .then(response => response.json())
   .then(members => {
     const grid = document.getElementById('team-grid');

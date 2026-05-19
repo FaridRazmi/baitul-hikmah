@@ -1,0 +1,95 @@
+/* ── Bag page ── */
+.bag-header {
+  text-align: center;
+  color: var(--primary);
+  margin-top: 30px;
+}
+
+.empty-bag {
+  text-align: center;
+  color: var(--primary);
+  margin-top: 50px;
+  font-size: 1.2rem;
+  grid-column: 1 / -1;
+}
+
+.checkout-container {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ── Book grid ── */
+#bookContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--side);
+}
+
+@media (max-width: 1024px) {
+  #bookContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #bookContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Book card ── */
+.book-card {
+  background: var(--primary);
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: 3px solid var(--side);
+  flex-shrink: 0;
+}
+
+.book-card h3 {
+  margin: 10px 0 4px;
+  font-size: 0.95rem;
+  color: var(--side);
+}
+
+.book-card p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: var(--side);
+  opacity: 0.85;
+}
+
+.book-card button {
+  background-color: var(--side);
+  color: var(--primary);
+  width: 100%;
+  margin-top: auto;
+  padding: 8px 7px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.book-card button:hover {
+  opacity: 0.85;
+}
