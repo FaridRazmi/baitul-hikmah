@@ -2,6 +2,7 @@
 let allBooks = [];
 let filteredBooks = [];
 let currentPage = 1;
+let firstLoad = true;
 const BOOKS_PER_PAGE = 8;
 
 // ── Element refs ──
@@ -27,21 +28,13 @@ fetch("../../data/books.json")
     }
     if (params.get("category")) {
       const cat = params.get("category");
-      setSelectValue(categoryFilter, cat);
-      setSelectValue(categoryFilterMob, cat);
+      categoryFilter.value = cat;
+      categoryFilterMob.value = cat;
     }
 
     applyFilters();
   });
 
-function setSelectValue(select, val) {
-  for (let opt of select.options) {
-    if (opt.value === val) {
-      opt.selected = true;
-      break;
-    }
-  }
-}
 
 // ── Sync desktop → mobile and mobile → desktop ──
 searchInput.addEventListener("input", () => {
@@ -57,13 +50,13 @@ searchInputMobile.addEventListener("input", () => {
 });
 
 categoryFilter.addEventListener("change", () => {
-  setSelectValue(categoryFilterMob, categoryFilter.value);
+  categoryFilterMob.value = categoryFilter.value;
   currentPage = 1;
   applyFilters();
 });
 
 categoryFilterMob.addEventListener("change", () => {
-  setSelectValue(categoryFilter, categoryFilterMob.value);
+  categoryFilter.value = categoryFilterMob.value;
   currentPage = 1;
   applyFilters();
 });
@@ -84,7 +77,6 @@ function applyFilters() {
   renderPage(currentPage);
 }
 
-let firstLoad = true;
 
 // ── Render one page of results ──
 function renderPage(page) {

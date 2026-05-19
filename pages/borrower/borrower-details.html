@@ -39,11 +39,12 @@
         <div class="form-group">
           <label for="matricNo">Matric No.</label>
           <input
-            type="number"
+            type="text"
+            inputmode="numeric"
             id="matricNo"
             placeholder="e.g. 256967"
-            min="0"
-            max="999999"
+            maxlength="6"
+            pattern="\d{6}"
             required
           />
         </div>
